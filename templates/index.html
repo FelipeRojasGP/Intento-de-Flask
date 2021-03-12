@@ -1,0 +1,24 @@
+<script>
+  function sendData() {
+    var source = new EventSource("/hello");
+    
+    source.onopen=function(e) {
+      console.log(e.data)
+      
+    }
+
+  }
+  </script>
+
+  <body>
+    <div class="container">
+      <form method="POST" action="/hello" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="text" name="file">
+          <input type="submit" name="upload" onclick="sendData()" />
+          
+        </div>
+      </form>
+      <input id="resultado"></input>
+    </div>
+  </body>

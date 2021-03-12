@@ -1,0 +1,6 @@
+<script>
+    var stream = new EventSource('/api/stream');
+    stream.onmessage = function(e) {
+        console.info(e.data);
+    };
+    </script>
